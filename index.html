@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Reminder App</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Adding anime.js from a reliable CDN -->
+    <script src="https://unpkg.com/animejs@3.2.1/lib/anime.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container animate-title">
+                <img src="logo.png" alt="Location Reminder App Logo" class="logo">
+            </div>
+            <p class="tagline animate-title">The app that won't let you forget your gym shorts! and other stuff too...</p>
+        </header>
+        
+        <!-- List Category Selection -->
+        <div class="category-section animate-in">
+            <div class="category-controls">
+                <select id="listCategory">
+                    <option value="general">General</option>
+                    <option value="gym">Gym</option>
+                    <option value="work">Work</option>
+                    <option value="shopping">Shopping</option>
+                </select>
+                <button id="newCategoryBtn">+ New Category</button>
+            </div>
+        </div>
+
+        <!-- Input Section -->
+        <div class="input-section animate-in">
+            <div class="input-group">
+                <input type="text" id="reminderInput" placeholder="Enter your reminder...">
+                <button type="button" id="addButton" class="add-button">Add Reminder</button>
+            </div>
+        </div>
+
+        <!-- Lists Section -->
+        <div class="lists-container animate-in">
+            <div class="list-header">
+                <h2 id="currentListTitle">General List</h2>
+                <button id="setLocationBtn" class="location-btn" title="Set the location where you need to remember these items">📍 Set Location</button>
+            </div>
+            <div id="locationStatus" class="location-status">No location set</div>
+            <ul id="reminderList" class="reminder-list">
+                <!-- Reminders will be added here dynamically -->
+            </ul>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
