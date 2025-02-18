@@ -11,6 +11,11 @@ app.use(express.json());
 
 const API_KEY = process.env.API_KEY;
 
+// Add root route for health check
+app.get('/', (req, res) => {
+  res.json({ status: 'Server is running' });
+});
+
 app.post('/api/chat', async (req, res) => {
   try {
     const response = await axios.post('https://api.openai.com/v1/chat/completions', 
