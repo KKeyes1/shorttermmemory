@@ -1,8 +1,8 @@
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 import os
 
-# Change to the directory containing index.html
-os.chdir(os.path.dirname(os.path.abspath(__file__)))
+# Change to the public directory containing the reminder app files
+os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'public'))
 
 # Create server
 server_address = ('', 8000)

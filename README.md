@@ -58,11 +58,13 @@ node server.js
 ```bash
 cd frontend
 npm install
-npm start
+# The Python server must serve from the public directory
+# This is configured in server.py
+python3 server.py
 ```
 
 4. Access the application:
-- Frontend: http://localhost:8000
+- Frontend: http://localhost:8000 (serves the app from the frontend/public directory)
 - Backend API: http://localhost:3001
 
 ## Environment Variables
@@ -109,13 +111,18 @@ The app includes a debug mode for testing location features:
 
 ## Common Issues
 
-1. Location Services:
+1. Frontend Serving:
+   - The app files are located in the `frontend/public` directory
+   - Make sure server.py is configured to serve from this directory
+   - If you see a chat interface instead of the reminder app, check server.py's working directory
+
+2. Location Services:
    - Ensure location services are enabled in your browser
    - Check system-level location permissions
    - For Safari: Safari Preferences → Websites → Location
    - For System: System Settings → Privacy & Security → Location Services
 
-2. Weather API:
+3. Weather API:
    - Verify your OpenWeatherMap API key in .env
    - Check API call limits on free tier
    - Ensure backend server is running
